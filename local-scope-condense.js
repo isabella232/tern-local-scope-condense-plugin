@@ -28,7 +28,10 @@ tern.registerPlugin('local-scope-condense', function(server, options) {
       data: av.metaData,
     };
     if (av.originNode) {
-      var defNode = defnode.findDefinitionNode(av.originNode.sourceFile.ast, av.originNode.start, av.originNode.end);
+      var node = av.originNode;
+      var defNode;
+      try { defNode = defnode.findDefinitionNode(node.sourceFile.ast, node.start, node.end); }
+      catch (e) { console.error('warning: findDefinitionNode failed:', e, 'at', node.type, 'in', node.sourceFile.name, node.start + '-' + node.end); }
       if (defNode) visitNode(state, defNode, path);
     }
   }
