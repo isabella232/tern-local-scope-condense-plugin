@@ -45,12 +45,12 @@ tern.registerPlugin('local-scope-condense', function(server, options) {
         Object.keys(state.types).sort().forEach(function(path) {
           var data = state.types[path];
           if (data.type.originNode) {
-            visitNode(state, data.type.originNode, joinPaths(path, '!local'));
+            visitNode(state, data.type.originNode, joinPaths(path, '@local'));
           }
         });
 
         state.cx.parent.files.forEach(function(file) {
-          var path = '!local.' + file.name.replace(/\./g, '`');
+          var path = '@local.' + file.name.replace(/\./g, '`');
           visitScope(state, file.scope, path);
           if (state.isTarget(file.name)) visitNode(state, file.ast, path);
         });
