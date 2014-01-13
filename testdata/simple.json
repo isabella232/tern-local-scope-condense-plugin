@@ -17,7 +17,7 @@
         }
       }
     },
-    "z.x.y.!local": {
+    "z.!local": {
       "0": {
         "zz": {
           "!type": "number",

@@ -1,4 +1,4 @@
-  {
+{
   "!name": "testdata/nodejs.js",
   "!define": {
     "!node": {
@@ -9,17 +9,6 @@
         },
         "!type": "fn(a: ?)",
         "!span": "17[0:17]-93[5:1]"
-      }
-    },
-    "!node.testdata/nodejs`js.e.!local": {
-      "0": {
-        "h": {
-          "!span": "112[7:17]-113[7:18]"
-        },
-        "i": {
-          "!type": "number",
-          "!span": "123[8:6]-124[8:7]"
-        }
       }
     },
     "!node.testdata/nodejs`js.!local": {
@@ -42,12 +31,19 @@
         }
       }
     },
+    "!node.testdata/nodejs`js.e.!local": {
+      "0": {
+        "h": {
+          "!span": "112[7:17]-113[7:18]"
+        },
+        "i": {
+          "!type": "number",
+          "!span": "123[8:6]-124[8:7]"
+        }
+      }
+    },
     "!local": {
       "testdata/nodejs`js": {
-        "e": {
-          "!type": "fn(h: ?)",
-          "!span": "99[7:4]-100[7:5]"
-        },
         "JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ": {
           "0": {
             "k": {
@@ -60,6 +56,10 @@
           },
           "!type": "fn(k: ?)",
           "!span": "164[12:9]-196[12:41]"
+        },
+        "e": {
+          "!type": "fn(h: ?)",
+          "!span": "99[7:4]-100[7:5]"
         }
       }
     }

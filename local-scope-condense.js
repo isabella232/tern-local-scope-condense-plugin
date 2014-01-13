@@ -6,9 +6,9 @@ tern.registerPlugin('local-scope-condense', function(server, options) {
     if (scope._localScopeCondenseSeen) return;
     scope._localScopeCondenseSeen = true;
 
-    for (var prop in scope.props) {
+    Object.keys(scope.props).sort().forEach(function(prop) {
       visitAVal(state, scope.props[prop], joinPaths(path, prop));
-    }
+    });
   }
 
   function visitNode(state, node, path) {
@@ -20,6 +20,7 @@ tern.registerPlugin('local-scope-condense', function(server, options) {
 
   function visitAVal(state, av, path) {
     if (!state.isTarget(av.origin)) return;
+
     state.types[path] = {
       type: av,
       span: state.getSpan(av),
@@ -38,7 +39,7 @@ tern.registerPlugin('local-scope-condense', function(server, options) {
       postCondenseReach: function(state) {
         // Traverse accessible types first so we name things with reachable path
         // prefixes if possible.
-        Object.keys(state.types).forEach(function(path) {
+        Object.keys(state.types).sort().forEach(function(path) {
           var data = state.types[path];
           if (data.type.originNode) {
             visitNode(state, data.type.originNode, joinPaths(path, '!local'));
