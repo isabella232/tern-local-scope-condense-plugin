@@ -11,7 +11,7 @@ describe('tern condense output', function() {
 
     // requirejs test is disabled until tern mainline has requirejs condense support.
     // {name: 'requirejs', args: ['--plugin', 'requirejs={"baseURL": "testdata"}']},
-  ].forEach(function(file) {
+  ].filter(function(file) { return new RegExp(process.env['F'] || '').test(file.name); }).forEach(function(file) {
     it(file.name + ' (with args: ' + (file.args || []).join(' ') + ')', function(done) {
       var expFile = './testdata/' + file.name + '.json';
       var want = require(expFile);
