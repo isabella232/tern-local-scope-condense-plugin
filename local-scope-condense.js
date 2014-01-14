@@ -20,6 +20,7 @@ tern.registerPlugin('local-scope-condense', function(server, options) {
 
   function visitAVal(state, av, path) {
     if (!state.isTarget(av.origin)) return;
+    if (av.fnArgs) return;
 
     state.types[path] = {
       type: av,

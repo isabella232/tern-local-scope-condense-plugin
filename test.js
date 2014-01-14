@@ -3,6 +3,7 @@ var assert = require('assert'), execFile = require('child_process').execFile, fs
 describe('tern condense output', function() {
   [
     {name: 'simple'},
+    {name: 'arguments'},
     {name: 'nodejs', args: ['--plugin', 'node']},
 
     // requirejs test is disabled until tern mainline has requirejs condense support.
