@@ -1,4 +1,7 @@
-var defnode = require('defnode'), tern = require('tern'), walk = require('acorn/util/walk'), walkall = require('walkall');
+var defnode = require('defnode');
+var tern = require('tern');
+var walk = require('acorn/util/walk');
+var walkall = require('walkall');
 
 tern.registerPlugin('local-scope-condense', function(server, options) {
   function visitScope(state, scope, path) {

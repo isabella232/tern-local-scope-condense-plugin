@@ -1,4 +1,7 @@
-var assert = require('assert'), execFile = require('child_process').execFile, fs = require('fs'), path = require('path');
+var assert = require('assert');
+var execFile = require('child_process').execFile;
+var fs = require('fs');
+var path = require('path');
 
 describe('tern condense output', function() {
   [
