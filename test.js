@@ -6,6 +6,7 @@ var path = require('path');
 describe('tern condense output', function() {
   [
     {name: 'simple'},
+    {name: 'b'},
     {name: 'arguments'},
     {name: 'nodejs', args: ['--plugin', 'node']},
 
