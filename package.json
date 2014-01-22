@@ -1,7 +1,7 @@
 {
   "name": "tern-local-scope-condense-plugin",
   "description": "Tern plugin for including local scope entries in condenser output",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": {
     "name": "Quinn Slack",
     "email": "sqs@sourcegraph.com"
@@ -14,7 +14,7 @@
     "tern": "~0.5.0",
     "walkall": "~0.0.3",
     "acorn": "~0.4.2",
-    "defnode": "~0.0.4"
+    "defnode": "~0.0.5"
   },
   "devDependencies": {
     "mocha": "1.10.0",
